@@ -1,7 +1,7 @@
 import React from "react";
 
-const NovBar = () => {
+const RandomList = () => {
   return <div></div>;
 };
 
-export default NovBar;
+export default RandomList;
