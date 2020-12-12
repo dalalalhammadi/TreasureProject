@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AuthButtonStyled } from "../Styles";
 
-const SigninButton = () => {
+const TresureThings = () => {
   return (
-    <Link to="/signin">
-      <AuthButtonStyled>Sign in</AuthButtonStyled>
+    <Link to="/treasure">
+      <AuthButtonStyled>Treasure ! </AuthButtonStyled>
     </Link>
   );
 };
 
-export default SigninButton;
+export default TresureThings;

@@ -4,19 +4,30 @@ import TreasureList from "./TreasureList";
 import RandomList from "./RandomList";
 import treasureStore from "../stores/treasureStore";
 import { observer } from "mobx-react";
-
+import Home from "./Home";
+import SigninForm from "./SigninForm";
+import SignupForm from "./SignupForm";
 const Routes = () => {
   return (
-    <div></div>
-    // <Switch>
-    //   <Route path="/random">
-    //     <RandomList />
-    //   </Route>
-    //   <Route path="/treasure">
-    //     <TreasureList treasures={treasureStore.treasures} />
-    //   </Route>
-    //   <Route exact path="/"></Route>
-    // </Switch>
+    <>
+      <Switch>
+        <Route path="/random">
+          <RandomList />
+        </Route>
+        <Route path="/treasure">
+          <TreasureList treasures={treasureStore.treasures} />
+        </Route>
+        <Route path="/signin">
+          <SigninForm />
+        </Route>
+        <Route path="/signup">
+          <SignupForm />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </>
   );
 };
 

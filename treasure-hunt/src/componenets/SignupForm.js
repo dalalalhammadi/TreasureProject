@@ -1,21 +1,8 @@
-import React from "react";
-import { useState } from "react";
-import Modal from "react-modal";
-import { AuthButtonStyled } from "../Styles";
+import React, { useState } from "react";
 import authStore from "../stores/authStore";
+import { AuthButtonStyled } from "../Styles";
 
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-};
-
-const SignupModal = ({ isOpen, closeModal }) => {
+const SignupForm = () => {
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -30,16 +17,9 @@ const SignupModal = ({ isOpen, closeModal }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     authStore.signup(user);
-    closeModal();
   };
-
   return (
-    <Modal
-      isOpen={isOpen}
-      onRequestClose={closeModal}
-      style={customStyles}
-      contentLabel="Signup Modal"
-    >
+    <div>
       <h3>Signup</h3>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -57,7 +37,7 @@ const SignupModal = ({ isOpen, closeModal }) => {
           <input
             name="password"
             value={user.password}
-            type="text"
+            type="password"
             className="form-control"
             onChange={handleChange}
           />
@@ -66,8 +46,8 @@ const SignupModal = ({ isOpen, closeModal }) => {
           Sign up
         </AuthButtonStyled>
       </form>
-    </Modal>
+    </div>
   );
 };
 
-export default SignupModal;
+export default SignupForm;
